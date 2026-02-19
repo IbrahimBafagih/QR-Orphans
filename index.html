@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="refresh" content="0; url=./view.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>جاري التحويل…</title>
+  <script>
+    (function () {
+      // إن وُجد id في الرابط الرئيسي، نحافظ عليه ونحوّله إلى view.html?id=...
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+      if (id) {
+        window.location.replace('./view.html?id=' + encodeURIComponent(id));
+      } else {
+        // بدون id → نحوّل لصفحة العرض العامة (يمكنك تعديلها لاحقًا)
+        window.location.replace('./view.html');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <p>جاري التحويل إلى صفحة العرض…</p>
+</body>
+</html>
